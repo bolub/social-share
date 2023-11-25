@@ -34,8 +34,8 @@ export const DisappearingText = () => {
         transition: "all",
         fontWeight: "bold",
         bgGradient: "to-r",
-        gradientFrom: "red.400",
-        gradientTo: "blue.400",
+        gradientFrom: "red.500",
+        gradientTo: "blue.500",
         backgroundClip: "text",
         WebkitTextFillColor: "transparent",
       })}

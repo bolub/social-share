@@ -17,15 +17,19 @@ export const Navbar = () => {
           width: "full",
         })}
       >
-        <p
+        <span
           className={css({
-            fontSize: "sm",
+            fontSize: { base: "lg", md: "xl" },
             fontWeight: "bold",
-            textTransform: "uppercase",
+            bgGradient: "to-r",
+            gradientFrom: "red.500",
+            gradientTo: "blue.500",
+            backgroundClip: "text",
+            WebkitTextFillColor: "transparent",
           })}
         >
-          Social share
-        </p>
+          SocialShare
+        </span>
       </div>
     </nav>
   );
