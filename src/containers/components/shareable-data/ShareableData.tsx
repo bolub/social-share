@@ -18,10 +18,12 @@ export const ShareableData = () => {
 
   return (
     <div
+      id="shareableData"
       className={css({
         width: "full",
         maxW: "350px",
         minW: { md: "350px" },
+        h: "fit-content",
       })}
     >
       <div
@@ -45,7 +47,7 @@ export const ShareableData = () => {
         </p>
 
         <div className={vstack({ gap: "32px", mt: "32px" })}>
-          <FormControl>
+          <FormControl id="link-container">
             <Label htmlFor="link">Link to share</Label>
 
             <Input
@@ -65,7 +67,7 @@ export const ShareableData = () => {
             <AvailableFor twitter pinterest />
           </FormControl>
 
-          <FormControl>
+          <FormControl id="text-container">
             <Label htmlFor="text">Text to share</Label>
 
             <Textarea
@@ -84,7 +86,7 @@ export const ShareableData = () => {
             <AvailableFor twitter linkedIn whatsapp pinterest />
           </FormControl>
 
-          <FormControl>
+          <FormControl id="url-container">
             <Label htmlFor="url">Image url to share </Label>
 
             <Input

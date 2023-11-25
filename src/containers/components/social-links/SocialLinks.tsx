@@ -11,6 +11,7 @@ export const SocialLinks = () => {
 
   return (
     <div
+      id="socialLinks"
       className={css({
         width: "full",
         maxW: "500px",

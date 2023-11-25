@@ -10,6 +10,7 @@
     "prepare": "panda codegen"
   },
   "dependencies": {
+    "@reactour/tour": "^3.6.1",
     "next": "14.0.3",
     "react": "^18",
     "react-dom": "^18",
