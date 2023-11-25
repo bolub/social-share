@@ -1,6 +1,8 @@
-import { useState } from "react";
 import { css } from "../../../../styled-system/css";
-import { Social, socialColors } from "@/shared/Social";
+import { Social, socialColors } from "@/shared/social";
+import { flex } from "../../../../styled-system/patterns";
+import { useCopy } from "@/hooks/useCopy";
+import { SocialLinkContainer } from "./SocialLinkContainer";
 
 type SocialLinkProps = {
   name: string;
@@ -9,40 +11,24 @@ type SocialLinkProps = {
 };
 
 export const SocialLink = (props: SocialLinkProps) => {
-  const { light, main } = socialColors[props.type];
+  const { main, icon } = socialColors[props.type];
 
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(props.link);
-
-    setCopied(true);
-
-    setTimeout(() => {
-      setCopied(false);
-    }, 1000);
-  };
+  const { copied, onCopy } = useCopy();
 
   return (
-    <div
-      style={{
-        backgroundColor: light,
-      }}
-      className={css({
-        rounded: "16px",
-        px: "20px",
-        py: "16px",
-        w: "full",
-      })}
-    >
+    <SocialLinkContainer type={props.type} name={props.name}>
       <p
         style={{
           color: main,
         }}
-        className={css({
+        className={flex({
           fontWeight: "bold",
+          gap: "8px",
+          alignItems: "center",
         })}
       >
+        {icon}
+
         {props.name}
       </p>
 
@@ -64,7 +50,9 @@ export const SocialLink = (props: SocialLinkProps) => {
         style={{
           backgroundColor: main,
         }}
-        onClick={handleCopy}
+        onClick={() => {
+          onCopy({ text: props.link });
+        }}
         className={css({
           mt: "30px",
           cursor: "pointer",
@@ -77,6 +65,6 @@ export const SocialLink = (props: SocialLinkProps) => {
       >
         {!copied ? "Copy" : "Copied"}
       </button>
-    </div>
+    </SocialLinkContainer>
   );
 };
