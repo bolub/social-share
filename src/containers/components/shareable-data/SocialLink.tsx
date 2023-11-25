@@ -1,32 +1,11 @@
 import { useState } from "react";
 import { css } from "../../../../styled-system/css";
-import { token } from "../../../../styled-system/tokens";
-
-export type Social = "twitter" | "linkedin" | "whatsapp" | "pinterest";
+import { Social, socialColors } from "@/shared/Social";
 
 type SocialLinkProps = {
   name: string;
   link: string;
   type: Social;
-};
-
-const socialColors: Record<Social, { light: string; main: string }> = {
-  twitter: {
-    light: token("colors.blue.100"),
-    main: token("colors.blue.900"),
-  },
-  linkedin: {
-    light: token("colors.sky.100"),
-    main: token("colors.sky.900"),
-  },
-  whatsapp: {
-    light: token("colors.green.100"),
-    main: token("colors.green.900"),
-  },
-  pinterest: {
-    light: token("colors.red.100"),
-    main: token("colors.red.900"),
-  },
 };
 
 export const SocialLink = (props: SocialLinkProps) => {
