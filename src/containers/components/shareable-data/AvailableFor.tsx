@@ -2,6 +2,7 @@ import React from "react";
 import { hstack } from "../../../../styled-system/patterns";
 import { css } from "../../../../styled-system/css";
 import { ImLinkedin, ImPinterest, ImTwitter, ImWhatsapp } from "react-icons/im";
+import { socialColors } from "@/shared/social";
 
 export const AvailableFor = (props: {
   twitter?: boolean;
@@ -25,13 +26,45 @@ export const AvailableFor = (props: {
         Available for:
       </span>
 
-      {props.twitter && <ImTwitter />}
+      {props.twitter && (
+        <div
+          style={{
+            color: socialColors["twitter"].main,
+          }}
+        >
+          <ImTwitter />
+        </div>
+      )}
 
-      {props.linkedIn && <ImLinkedin />}
+      {props.linkedIn && (
+        <div
+          style={{
+            color: socialColors["linkedin"].main,
+          }}
+        >
+          <ImLinkedin />
+        </div>
+      )}
 
-      {props.whatsapp && <ImWhatsapp />}
+      {props.whatsapp && (
+        <div
+          style={{
+            color: socialColors["whatsapp"].main,
+          }}
+        >
+          <ImWhatsapp />
+        </div>
+      )}
 
-      {props.pinterest && <ImPinterest />}
+      {props.pinterest && (
+        <div
+          style={{
+            color: socialColors["pinterest"].main,
+          }}
+        >
+          <ImPinterest />
+        </div>
+      )}
     </div>
   );
 };
