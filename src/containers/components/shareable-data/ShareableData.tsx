@@ -21,7 +21,7 @@ export const ShareableData = () => {
       className={css({
         width: "full",
         maxW: "350px",
-        minW: "350px",
+        minW: { md: "350px" },
       })}
     >
       <div
