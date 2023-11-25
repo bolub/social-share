@@ -10,6 +10,8 @@ import { inputIds, useQueryParams } from "./useQueryParams";
 import { useQueryParamsActions } from "@/hooks/useQueryParamsActions";
 import { FormControl } from "@/components/form/FormControl";
 
+import { AvailableFor } from "./AvailableFor";
+
 export const ShareableData = () => {
   const { link, text, url } = useQueryParams();
   const { setQueryParam } = useQueryParamsActions();
@@ -59,6 +61,8 @@ export const ShareableData = () => {
               }}
               placeholder="https://example.com"
             />
+
+            <AvailableFor twitter pinterest />
           </FormControl>
 
           <FormControl>
@@ -76,6 +80,8 @@ export const ShareableData = () => {
                 });
               }}
             />
+
+            <AvailableFor twitter linkedIn whatsapp pinterest />
           </FormControl>
 
           <FormControl>
@@ -94,6 +100,8 @@ export const ShareableData = () => {
                 });
               }}
             />
+
+            <AvailableFor pinterest />
           </FormControl>
         </div>
       </div>
