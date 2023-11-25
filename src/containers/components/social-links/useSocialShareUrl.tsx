@@ -1,6 +1,5 @@
-import React from "react";
+import { Social } from "@/shared/social";
 import { useQueryParams } from "../shareable-data/useQueryParams";
-import { Social } from "../shareable-data/SocialLink";
 
 export const shareIds = {
   linkedin: {
