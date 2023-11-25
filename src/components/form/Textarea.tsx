@@ -8,7 +8,7 @@ export const Textarea = ({ className, ...props }: TextareaProps) => {
     <textarea
       className={cx(
         css({
-          fontSize: "15px",
+          fontSize: "sm",
           border: "1px solid",
           borderColor: "gray.300",
           borderRadius: "md",

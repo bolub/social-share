@@ -8,7 +8,7 @@ export const Input = ({ className, ...props }: InputProps) => {
     <input
       className={cx(
         css({
-          fontSize: "15px",
+          fontSize: "sm",
           border: "1px solid",
           borderColor: "gray.300",
           borderRadius: "md",
