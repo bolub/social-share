@@ -2,15 +2,15 @@
 
 import { css } from "../../../../styled-system/css";
 import { vstack } from "../../../../styled-system/patterns";
-import { Input } from "@/components/form/Input";
 import { Label } from "@/components/form/Label";
-import { Textarea } from "@/components/form/Textarea";
 import { SectionHeader } from "../SectionHeader";
 import { inputIds, useQueryParams } from "./useQueryParams";
 import { useQueryParamsActions } from "@/hooks/useQueryParamsActions";
 import { FormControl } from "@/components/form/FormControl";
 
 import { AvailableFor } from "./AvailableFor";
+import DebouncedInput from "@/components/form/DebouncedInput";
+import DebouncedTextarea from "@/components/form/DebouncedTextarea";
 
 export const ShareableData = () => {
   const { link, text, url } = useQueryParams();
@@ -50,18 +50,18 @@ export const ShareableData = () => {
           <FormControl id="link-container">
             <Label htmlFor="link">Link to share</Label>
 
-            <Input
+            <DebouncedInput
               id="link"
               type="link"
               name="link"
               value={link}
-              onChange={(e) => {
+              placeholder="https://example.com"
+              onChange={(value) => {
                 setQueryParam({
                   name: inputIds.link,
-                  value: e.target.value,
+                  value: value as string,
                 });
               }}
-              placeholder="https://example.com"
             />
 
             <AvailableFor twitter pinterest />
@@ -70,15 +70,15 @@ export const ShareableData = () => {
           <FormControl id="text-container">
             <Label htmlFor="text">Text to share</Label>
 
-            <Textarea
+            <DebouncedTextarea
               id="text"
               name="text"
               value={text}
               placeholder="Checkout this resource at example"
-              onChange={(e) => {
+              onChange={(value) => {
                 setQueryParam({
                   name: inputIds.text,
-                  value: e.target.value,
+                  value: value as string,
                 });
               }}
             />
@@ -89,16 +89,16 @@ export const ShareableData = () => {
           <FormControl id="url-container">
             <Label htmlFor="url">Image url to share </Label>
 
-            <Input
+            <DebouncedInput
               id="url"
               type="url"
               name="url"
               value={url}
               placeholder="https://example.com/image.png"
-              onChange={(e) => {
+              onChange={(value) => {
                 setQueryParam({
                   name: inputIds.url,
-                  value: e.target.value,
+                  value: value as string,
                 });
               }}
             />

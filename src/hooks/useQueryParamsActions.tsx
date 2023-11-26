@@ -13,7 +13,7 @@ export const useQueryParamsActions = () => {
       search.set(name, value);
     }
 
-    router.replace(`/?${search.toString()}`);
+    router.replace(`/?${search.toString()}`, { scroll: false });
   };
 
   return {

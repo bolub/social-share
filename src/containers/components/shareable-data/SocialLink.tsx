@@ -1,7 +1,6 @@
 import { css, cx } from "../../../../styled-system/css";
 import { Social, socialColors } from "@/shared/social";
 import { flex } from "../../../../styled-system/patterns";
-import { useCopy } from "@/hooks/useCopy";
 import { SocialLinkContainer } from "./SocialLinkContainer";
 import { button } from "@/theme/button";
 
@@ -13,8 +12,6 @@ type SocialLinkProps = {
 
 export const SocialLink = (props: SocialLinkProps) => {
   const { main, icon } = socialColors[props.type];
-
-  const { copied, onCopy } = useCopy();
 
   return (
     <SocialLinkContainer type={props.type} name={props.name}>
@@ -47,22 +44,21 @@ export const SocialLink = (props: SocialLinkProps) => {
         {props.link}
       </a>
 
-      <button
-        style={{
-          backgroundColor: main,
-        }}
-        onClick={() => {
-          onCopy({ text: props.link });
-        }}
-        className={cx(
-          button({ visual: "plain", size: "xs" }),
-          css({
-            mt: "30px",
-          })
-        )}
-      >
-        {!copied ? "Copy" : "Copied"}
-      </button>
+      <a target="__blank" href={props.link}>
+        <button
+          style={{
+            backgroundColor: main,
+          }}
+          className={cx(
+            button({ visual: "plain", size: "xs" }),
+            css({
+              mt: "30px",
+            })
+          )}
+        >
+          Go to link
+        </button>
+      </a>
     </SocialLinkContainer>
   );
 };
