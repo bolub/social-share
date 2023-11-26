@@ -32,7 +32,7 @@ export const SocialLinks = () => {
         <SocialLink
           name="Linkedin"
           link={formatSocialShareUrl(
-            "https://www.linkedin.com/sharing/share-offsite",
+            "http://www.linkedin.com/shareArticle?mini=true",
             "linkedin"
           )}
           type="linkedin"

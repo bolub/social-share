@@ -64,7 +64,7 @@ export const ShareableData = () => {
               }}
             />
 
-            <AvailableFor twitter pinterest />
+            <AvailableFor twitter linkedIn pinterest />
           </FormControl>
 
           <FormControl id="text-container">

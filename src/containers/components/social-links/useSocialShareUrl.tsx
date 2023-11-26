@@ -4,7 +4,7 @@ import { useQueryParams } from "../shareable-data/useQueryParams";
 export const shareIds = {
   linkedin: {
     text: "title",
-    link: null,
+    link: "url",
     image: null,
   },
   twitter: {
