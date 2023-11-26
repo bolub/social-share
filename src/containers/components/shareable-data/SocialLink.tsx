@@ -1,6 +1,6 @@
 import { css, cx } from "../../../../styled-system/css";
 import { Social, socialColors } from "@/shared/social";
-import { flex } from "../../../../styled-system/patterns";
+import { flex, square } from "../../../../styled-system/patterns";
 import { SocialLinkContainer } from "./SocialLinkContainer";
 import { button } from "@/theme/button";
 
@@ -57,6 +57,20 @@ export const SocialLink = (props: SocialLinkProps) => {
           )}
         >
           Go to link
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.8}
+            stroke="currentColor"
+            className={square({ size: 3 })}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+            />
+          </svg>
         </button>
       </a>
     </SocialLinkContainer>
