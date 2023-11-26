@@ -3,7 +3,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { css } from "../../../styled-system/css";
 
-const data = ["Twitter", "Linkedin", "Whatsapp"];
+const data = ["Twitter", "Linkedin", "Whatsapp", "Pinterest"];
 
 export const DisappearingText = () => {
   const [activeTextIndex, setActiveTextIndex] = useState(0);
@@ -31,7 +31,6 @@ export const DisappearingText = () => {
   return (
     <span
       className={css({
-        transition: "all",
         fontWeight: "bold",
         bgGradient: "to-r",
         gradientFrom: "red.500",
