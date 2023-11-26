@@ -3,6 +3,8 @@ import { cva } from "../../styled-system/css";
 export const button = cva({
   base: {
     display: "flex",
+    alignItems: "center",
+    gap: "6px",
     cursor: "pointer",
     color: "white",
     rounded: "lg",
