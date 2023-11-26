@@ -1,8 +1,9 @@
-import { css } from "../../../../styled-system/css";
+import { css, cx } from "../../../../styled-system/css";
 import { Social, socialColors } from "@/shared/social";
 import { flex } from "../../../../styled-system/patterns";
 import { useCopy } from "@/hooks/useCopy";
 import { SocialLinkContainer } from "./SocialLinkContainer";
+import { button } from "@/theme/button";
 
 type SocialLinkProps = {
   name: string;
@@ -53,15 +54,12 @@ export const SocialLink = (props: SocialLinkProps) => {
         onClick={() => {
           onCopy({ text: props.link });
         }}
-        className={css({
-          mt: "30px",
-          cursor: "pointer",
-          fontSize: "xs",
-          color: "white",
-          rounded: "lg",
-          px: "3",
-          py: "2",
-        })}
+        className={cx(
+          button({ visual: "plain", size: "xs" }),
+          css({
+            mt: "30px",
+          })
+        )}
       >
         {!copied ? "Copy" : "Copied"}
       </button>
