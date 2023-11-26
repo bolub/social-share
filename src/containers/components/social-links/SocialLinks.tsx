@@ -14,7 +14,7 @@ export const SocialLinks = () => {
       id="socialLinks"
       className={css({
         width: "full",
-        maxW: "500px",
+        maxW: { md: "500px" },
       })}
     >
       <SectionHeader>Social Links</SectionHeader>

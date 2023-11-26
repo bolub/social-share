@@ -21,7 +21,7 @@ export const ShareableData = () => {
       id="shareableData"
       className={css({
         width: "full",
-        maxW: "350px",
+        maxW: { md: "350px" },
         minW: { md: "350px" },
         h: "fit-content",
       })}
