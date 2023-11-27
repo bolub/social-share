@@ -9,9 +9,15 @@ export const inputIds = {
 export const useQueryParams = () => {
   const searchParams = useSearchParams();
 
+  const getValue = (param: string) => {
+    const rawParamValue = searchParams.get(param) || "";
+
+    return decodeURIComponent(rawParamValue);
+  };
+
   return {
-    link: searchParams.get(inputIds.link) || ("" as string),
-    text: searchParams.get(inputIds.text) || ("" as string),
-    url: searchParams.get(inputIds.url) || ("" as string),
+    link: getValue(inputIds.link),
+    text: getValue(inputIds.text),
+    url: getValue(inputIds.url),
   };
 };

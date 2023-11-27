@@ -9,7 +9,7 @@ export const useQueryParamsActions = () => {
     if (!value) {
       search.delete(name);
     } else {
-      search.set(name, value);
+      search.set(name, encodeURIComponent(value));
     }
 
     router.replace(`/?${search.toString()}`, { scroll: false });
